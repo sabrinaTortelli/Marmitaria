@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Package } from './package.model';
 
 @Component({
   selector: 'app-packages',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./packages.component.css']
 })
 export class PackagesComponent implements OnInit {
+
+  selectedPackage!: Package;
 
   constructor() { }
 

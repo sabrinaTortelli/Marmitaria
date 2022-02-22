@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Package } from '../package.model';
 
 @Component({
@@ -13,9 +13,14 @@ export class PackageListComponent implements OnInit {
     new Package('Arroz Negro', 'Arroz Negro Cozindo com louro, alho e cebola', 'https://img.itdg.com.br/images/recipes/000/199/772/309707/309707_original.jpg'),
   ];
 
+  @Output() packagesWasSelected = new EventEmitter<Package>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onPackageSelected(packageSelected: Package){
+    this.packagesWasSelected.emit(packageSelected);
+  }
 }

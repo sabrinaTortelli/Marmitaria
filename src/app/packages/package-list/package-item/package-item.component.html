@@ -1,1 +1,13 @@
-<p>package-item works!</p>
+<a href="#" class="list-group-item clearfix" (click)="onSelected()">
+    <div class="float-start">
+        <h4 class="list-group-item-heading">{{ package.name }}</h4>
+        <p class="list-group-item-text">{{ package.description }}</p>
+    </div>
+    <div class="float-end">
+        <img 
+            alt="{{package.name}}" 
+            [src]="package.imagePath" 
+            class="img-responsive" 
+            style="max-height: 50px;">
+    </div>
+</a>
